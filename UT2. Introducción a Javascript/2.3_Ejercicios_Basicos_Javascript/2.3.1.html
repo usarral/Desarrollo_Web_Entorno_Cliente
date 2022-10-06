@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios basicos Javascript - Hoja 2.3 - Ejercicio 1</title>
+</head>
+
+<body>
+    <h1>Ejercicios basicos Javascript - Hoja 2.3 - Ejercicio 1</h1>
+    <p><b>Enunciado</b>:
+        Haz una página que genere el juego del PUM hasta 100. Es decir, que escriba los números separados por coma y
+        cada vez
+        que encuentre un número terminado en 7 o múltiplo de 7 escriba PUM y cambie de línea
+    </p>
+</body>
+<script>
+    for (let i = 1; i <= 100; i++) { // Recorro los numeros del 1 al 100
+        if (i % 7 == 0) { // Si el numero dividido entre 7 da resto 0, es decir, si el numero es multiplo de 7, escribo PUM y cambio de linea
+            document.write(`PUM <br>`)
+        }
+        else if (i % 10 == 7) { // Si el numero dividido entre 10 da resto 7, es decir, si el numero termina en 7, escribo PUM y cambio de linea
+            document.write(`PUM <br>`)
+        }
+        else { // Sino, escribo el numero y un espacio
+            document.write(`${i} `)
+        }
+
+    }
+</script>
+
+
+</html>

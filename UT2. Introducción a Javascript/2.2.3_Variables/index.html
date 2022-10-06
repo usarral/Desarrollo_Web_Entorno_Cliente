@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Mundo con variables</title>
+</head>
+
+<body>
+    <label for="text">Introduce tu nombre</label>
+    <input type="text" name="text" id="text">
+    <button type="button" id="btn">Mostrar</button>
+</body>
+<script>
+    var $ = (selector) => document.querySelector(selector)
+    var text = $("#text")
+    var textValue = 'introduce tu nombre'
+
+    var btn = $('#btn')
+    alert(`Hola mundo, \n Bienvenido ${textValue}`)
+    // Add event listener to button to prevent default
+    btn.addEventListener('click', (e) => {
+        e.preventDefault()
+        textValue = text.value
+        alert(`Hola mundo, \n Bienvenido ${textValue}`)
+    })
+</script>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios basicos Javascript - Hoja 2.3 - Ejercicio 2</title>
+</head>
+
+<body>
+    <h1>Ejercicios basicos Javascript - Hoja 2.3 - Ejercicio 2</h1>
+    <p><b>Enunciado</b>:
+        Crea una página Web que muestre la fecha y hora actual con el siguiente formato: Hoy es lunes, 28 de Noviembre
+        de 2022 y
+        son las 14:32 horas Puedes ayudarte del objeto Date.
+    </p>
+</body>
+<script>
+    var fecha = new Date(); // Creo el objeto fecha para obtenerla
+    var diasemana = fecha.toLocaleDateString("es-ES", { weekday: "long" }) //Obtengo el dia de la semana en el formato local del usuario, de esta manera si el usuario tiene el idioma en español, el dia de la semana se mostrara en español y si el usuario tiene el idioma en ingles, el dia de la semana se mostrara en ingles
+    var dia_fecha = fecha.getDate() //Obtengo el dia de la fecha
+    var mes_fecha = fecha.toLocaleDateString("es-ES", { month: "long" }) // Al igual que el dia de la semana obtengo el mes de la fecha en el formato local del usuario
+    var anio_fecha = fecha.getFullYear() //Obtengo el numero de año completo
+    var hora = fecha.getHours() // Obtengo la hora 
+    if (hora < 10) { //Para que no se represente la hora, si es menor a 10, con un 0 delante, por ejemplo, si la hora es 9, se representara como 09
+        hora = `0${hora}`
+    }
+    var minutos = fecha.getMinutes() // Obtengo los minutos
+    if (minutos < 10) { // Al igual que la hora, si los minutos son menores a 10, se representara con un 0 delante, por ejemplo, si los minutos son 9, se representara como 09
+        minutos = `0${minutos}`
+    }
+    document.write(`Hoy es ${diasemana}, ${dia_fecha} de ${mes_fecha} de ${anio_fecha} y son las ${hora}:${minutos} horas`) // Escribo el texto en un template string y lo muestro en el HTML con document.write
+</script>
+
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios basicos Javascript - Hoja 2.3 - Ejercicio 3</title>
+</head>
+
+<body>
+    <h1>Ejercicios basicos Javascript - Hoja 2.3 - Ejercicio 3</h1>
+    <p><b>Enunciado</b>:
+        Crea una página Web que indique si el Documento Nacional de Identidad introducido por un usuario es correcto o
+        no
+        mediante un mensaje en una ventana emergente.
+        <br>
+        El cálculo de la letra del DNI es un proceso matemático sencillo que se basa en obtener el resto de la división
+        entera del número de DNI y el número 23.
+        <br>
+        A partir del resto de la división, se
+        obtiene la letra seleccionándola dentro de un string de letras.
+        <br> El string de letras es:
+        'TRWAGMYFPDXBNJZSQVHLCKET'.
+        <br> Por
+        tanto, si el resto de la división es 0, la letra del DNI es la T o si el resto es 3, la letra es la A. Puedes
+        ayudarte
+        del objeto String.
+    </p>
+</body>
+<script>
+    var dni = window.prompt(`Introduce el número de DNI a validar`) // Pido el numero de DNI a validar
+    let letras = 'TRWAGMYFPDXBNJZSQVHLCKET' //Guardo las letras ordenadas en una variable
+    while (true) { //Bucle infinito para que el usuario introduzca el DNI hasta que sea correcto
+        if (dni.length != 9) {
+            window.alert(`El DNI introducido no es correcto`) // Si el DNI no tiene 9 caracteres, es incorrecto y se vuelve a pedir
+        }
+        else {
+            break // Cuando el DNI es correcto se sale del bucle
+        }
+    }
+    dni = dni.toUpperCase() // Convierto el DNI a mayusculas
+
+    var ndni = dni.slice(0, 8) // Extraigo el numero de DNI el debe ser los 8 primeros caracteres
+    var ldni = dni.slice(8, 9) // Compruebo la letra del DNI que debe ser el ultimo caracter
+
+    var resto = ndni % 23 // Calculo el resto de la division del numero de DNI entre 23
+    var letra = letras.charAt(resto) // Extraigo la letra del DNI que corresponde al resto de la division
+
+    if (letra == ldni) { // Compruebo si la letra coincide con la letra del DNI introducida
+        window.alert(`El DNI introducido es correcto`)
+        document.write(`El DNI introducido es correcto, el numero de DNI es ${ndni} y la letra es ${ldni}`)
+    }
+    else { // Si no coincide, aviso al usuario que el DNI es incorrecto
+        window.alert(`El DNI introducido es invalido`)
+        document.write(`El DNI introducido es incorrecto, el numero de DNI introducido es ${ndni}, la letra introducida es ${ldni} mientras que debería ser ${letra}`)
+    }
+</script>
+
+
+</html>
