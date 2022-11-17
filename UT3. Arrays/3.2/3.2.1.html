@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.2.1</title>
+    <link rel='stylesheet' href='https://unpkg.com/@picocss/pico@latest/css/pico.min.css'>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    function comprobarDNI(dniInput) {
+        dniNum = dniInput.substring(0, 8);
+        dniLetra = dniInput.substring(8, 9);
+        resto = dniNum % 23;
+        letras = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+        letraReal = letras[resto];
+        if (letraReal == dniLetra) {
+            document.write("El DNI es correcto<br>");
+            document.write(`Has introducido el DNI ${dniInput}`);
+            document.write("<br>");
+            document.write(`La letra del DNI para ese número debe ser ${letraReal}`);
+        }
+        else {
+            document.write("El DNI es incorrecto");
+            document.write(`Has introducido el DNI ${dniInput}`);
+            document.write("<br>");
+            document.write(`La letra del DNI para ese número debe ser ${letraReal}`);
+
+        }
+    }
+    introducedDNI = prompt("Introduce tu DNI")
+    introducedDNI = introducedDNI.toUpperCase()
+    while (true) {
+        if (introducedDNI.length == 9) {
+            comprobarDNI(introducedDNI);
+            break;
+        }
+        else {
+            alert("El DNI introducido no es válido");
+
+            introducedDNI = prompt("Introduce tu DNI");
+            introducedDNI = introducedDNI.toUpperCase();
+        }
+    }
+</script>
+
+</html>

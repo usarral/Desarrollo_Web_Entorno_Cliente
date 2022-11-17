@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.1.2</title>
+</head>
+
+<body>
+    Enunciado:
+    Crea una página web con un vector de seis componentes (true, 5, false, "hola", "adios", 2).
+    Con el uso de operadores, comprobar si:
+    <ul>
+        <li>El cuarto componente es mayor o no que el tercero</li>
+        <li>Realizar un OR entre el primer y el tercer componente</li>
+        <li>Realizar un AND entre el primer y tercer componente.</li>
+        <li>Sumar, restar, multiplicar, dividir y calcular el modulo entre el segundo y el sexto componente.</li>
+    </ul>
+
+</body>
+<script>
+    var vector = [true, 5, false, "hola", "adios", 2]
+    var resultado = 0
+    if (vector[3] > vector[2]) {
+        document.write("El cuarto componente es mayor que el 3º")
+    } else {
+        document.write("El tercer componente es mayor que el 4º")
+    }
+    document.write("<br>")
+    if (vector[0] || vector[2]) {
+        document.write("El primer o tercer componente es true")
+    } else {
+        document.write("El primer y tercer componente son false")
+    }
+    document.write("<br>")
+    if (vector[0] && vector[2]) {
+        document.write("El primer y tercer componente son true")
+    } else {
+        document.write("El primer o tercer componente es false")
+    }
+    document.write("<br>")
+    document.write("La suma de los componentes 2 y 6 es: " + (vector[1] + vector[5]) + "<br>")
+    document.write("La resta de los componentes 2 y 6 es: " + (vector[1] - vector[5]) + "<br>")
+    document.write("La multiplicación de los componentes 2 y 6 es: " + (vector[1] * vector[5]) + "<br>")
+    document.write("La división de los componentes 2 y 6 es: " + (vector[1] / vector[5]) + "<br>")
+    document.write("El módulo de los componentes 2 y 6 es: " + (vector[1] % vector[5]) + "<br>")
+
+</script>
+
+</html>

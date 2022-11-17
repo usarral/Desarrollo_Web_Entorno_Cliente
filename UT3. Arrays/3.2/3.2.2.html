@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3.2.2</title>
+    <link rel='stylesheet' href='https://unpkg.com/@picocss/pico@latest/css/pico.min.css'>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    comparaNumeros(prompt("Introduce un número"), prompt("Introduce otro número"))
+    function comparaNumeros(num1, num2) {
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        if (num1 > num2) {
+            document.write(`El número ${num1} es mayor que el número ${num2}<br>`);
+        }
+        if (num2 >= 0) {
+            document.write(`El número ${num2} es positivo <br>`);
+
+        }
+        if (num1 < 0) {
+            document.write(`El número ${num1} es negativo <br>`);
+        }
+        if (num1 == 0) {
+            document.write(`El número ${num1} es 0 <br>`);
+        }
+        if (num1 + 1 >= num2) {
+            document.write(`La suma de ${num1} y 1 es mayor o igual que ${num2} <br>`);
+        }
+    }
+</script>
+
+</html>
